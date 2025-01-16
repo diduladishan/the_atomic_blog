@@ -10,7 +10,7 @@ function createRandomPost() {
 
 const PostContext = createContext();
 
-function PostProvider() {
+function PostProvider({ children }) {
   const [posts, setPosts] = useState(() =>
     Array.from({ length: 30 }, () => createRandomPost())
   );
@@ -44,6 +44,10 @@ function PostProvider() {
         searchQuery,
         setSearchQuery,
       }}
-    ></PostContext.Provider>
+    >
+      {children}
+    </PostContext.Provider>
   );
 }
+
+export { PostProvider, PostContext };
