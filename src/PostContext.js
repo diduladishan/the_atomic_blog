@@ -8,8 +8,6 @@ function createRandomPost() {
   };
 }
 
-let x;
-
 const PostContext = createContext();
 
 function PostProvider({ children }) {
